@@ -1,0 +1,15 @@
+create database BusReservation;
+use BusReservation;
+create table Bus(BusNo int primary key,Capacity int,Ac boolean);
+create table Booking(Passangerid int primary key,pass_Name varchar(34),BusNo int, foreign key(BusNo) references Bus(BusNo),tickets int,date1 date);
+insert into Bus values(1,45,true);
+insert into Booking values(25,"rahul",1,3,"2020-12-23");
+ALTER TABLE Booking DROP PRIMARY KEY;
+alter table Booking add column seats varchar(20);
+alter table Booking drop column seats;
+select * from Booking;
+select * from Bus;
+delete  from Bus where Capacity=1;
+delete from Booking where tickets=25;
+update Bus set Capacity=45 where BusNo=25;
+desc Booking;
